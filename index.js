@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const port = process.env.PORT || 3000;
-mongoose.connect(process.env.MONGODB_URI );
+mongoose.connect("mongodb+srv://admin:232004Aditya%40mongo@cluster0.dahrvb8.mongodb.net/trialDB");
 const dbSchema = new mongoose.Schema({
     name: String,
     age: Number
