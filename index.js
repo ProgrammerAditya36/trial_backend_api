@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://admin:232004Aditya%40mongo@cluster0.dahrvb8.mongodb.net/trialDB');
+const port = process.env.PORT || 3000;
+mongoose.connect(process.env.MONGODB_URI );
 const dbSchema = new mongoose.Schema({
     name: String,
     age: Number
@@ -23,6 +24,6 @@ app.post('/', async(req, res) => {
     await newUser.save();
     res.json(newUser);
 })
-app.listen(3000, () => {
-console.log('Server is running on http://localhost:3000')
-})
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
